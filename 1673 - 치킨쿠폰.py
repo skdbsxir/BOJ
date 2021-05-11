@@ -49,7 +49,9 @@ while True :
         print('도장수 : %d' % stamp)
         #print('먹은횟수 : %d' % toEat)
         stamp -= k
-        n += 1
+        # n이 아니라 stamp가 늘어나는 거지.....
+        #n += 1
+        stamp += 1
         toEat += 1
         print('%d개 쿠폰으로 교환하고 남은 도장 수 : %d' % (k, stamp))
         print('교환하고 먹은횟수 : %d' % toEat)

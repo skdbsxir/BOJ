@@ -128,3 +128,12 @@ a
 aaaaaa
 0
 """
+
+"""
+풀고나서 본 다른사람들의 풀이
+https://aisiunme.github.io/algorithm/2018/08/13/baekjoon-group-word-checker-1316.md/
+https://sw-beta.tistory.com/80
+https://namhandong.tistory.com/67
+
+find 함수......
+"""

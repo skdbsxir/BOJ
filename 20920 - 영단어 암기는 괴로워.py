@@ -54,9 +54,18 @@ for word, appearance in wordDict.items():
 print(wordDict2)
 print('\n')
 
+# dictToList = list(wordDict2.items()) # 리스트로 굳이 안바꿔도 되는구나...
+# print(dictToList)
+# print('\n')
+
 # value 순으로 정렬해두자.
-sortDict = sorted(wordDict2.items(), key=lambda x: x[1], reverse=True)
+# sortDict = sorted(wordDict2.items(), key=lambda x: (x[1], x[0]), reverse=True)
+
+# 이게 진짜 유레카네. https://dailyheumsi.tistory.com/67 이런 개꿀팁이..
+sortDict = sorted(wordDict2.items(), key=lambda x: (-x[1][0], -x[1][1], x[0])) 
+# sortList = sorted(dictToList, key=lambda x: (-x[1][0], -x[1][1], x[0]))
 print(sortDict) # 반환이 리스트로 되는구나.
+# print(sortList)
 print('\n')
 # 이렇게 하면 key순으로 정렬은 안됐다. 
 # append 1, attendance 1 인데 ap가 at보다 사전 앞이라서 append가 먼저 옴.
@@ -70,40 +79,3 @@ for i in range(len(sortDict)):
 
 for i in range(len(ansList)):
     print(ansList[i], end='\n')
-
-"""
-# 위 풀이 틀렸답니다. 시간초과도 아니고... 열받네
-N, M = map(int, input().split())
-wordList = []
-for _ in range(N):
-    wordList.append(input())
-
-wordDict = {}
-for i in wordList:
-    try:
-        wordDict[i] += 1
-    except:
-        wordDict[i] = 1
-
-wordDict2 = {}
-for word, appearance in wordDict.items():
-    if len(word) >= M:
-        # wordList2.append(word)
-        wordDict2[word] = [appearance, len(word)]
-
-sortDict = sorted(wordDict2.items(), key=lambda x: x[1], reverse=True)
-
-ansList = []
-for i in range(len(sortDict)):
-    ansList.append(sortDict[i][0]) # 리스트 안 요소의 첫번째 것만 빼오자.
-
-for i in range(len(ansList)):
-    print(ansList[i], end='\n')
-"""
-
-
-
-
-
-
-
